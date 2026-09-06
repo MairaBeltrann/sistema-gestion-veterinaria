@@ -1,2 +1,3 @@
-# Sistema de Gestión Veterinaria - Módulo de Turnos y Mercado Pago
-# Sistema de Gestion Veterinaria - Modulo Autenticacion y Registro
+# Sistema de Gestion Veterinaria 
+
+# Modulo de Autenticacion y Registro | Modulo de Turnos y Mercado Pago
