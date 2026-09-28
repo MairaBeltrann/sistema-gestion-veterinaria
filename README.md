@@ -58,3 +58,23 @@ El sistema se estructura en las siguientes entidades principales:
 * **Backend:** Python (FastAPI / Flask) + Base de Datos MySQL / SQLite.
 * **Frontend:** React + Vite + Tailwind CSS.
 * **Integraciones:** Pasarela de pagos con Mercado Pago (cobro de seña del 10%) y servicio de correo electrónico para recuperación de cuenta.
+---
+
+
+## Bitácora de Desarrollo
+
+Registro cronológico de actividades, decisiones de diseño y avances del proyecto durante el cuatrimestre.
+
+### [06/09/2026] - Versionado y Flujo Colaborativo (TP N° 1)
+* **Actividad:** Configuración inicial del repositorio en GitHub y estructuración de carpetas base (`backend` y `frontend`).
+* **Flujo de Trabajo:** Creación de ramas independientes por funcionalidad (`feature/auth-models` y `feature/turnos-pagos`).
+* **Resolución de Conflictos:** Provocación y resolución manual de un conflicto de fusión (*Merge Conflict*) en el archivo `README.md`, unificando las reglas de negocio con la estructura general del proyecto.
+* **Integración y Calidad:** Apertura, revisión y aprobación de Pull Requests (`#1` y `#2`), finalizando con un *soft reset* para mantener un historial de commits limpio y profesional en la rama `main`.
+
+### [07/09/2026] - Definición de la Arquitectura de Software
+* **Selección de Arquitectura:** Se optó por una **Arquitectura en Capas (3 Capas)** desacoplada, utilizando **React** en el Frontend y **Python (FastAPI/Flask)** en el Backend.
+* **Mapeo de Capas en el Sistema:**
+  * **Capa de Presentación (Frontend):** Vistas en React para Clientes (reserva de turnos y consulta de fichas), Médicos (agenda diaria y carga de diagnósticos) y Administrador (gestión de personal).
+  * **Capa de Lógica de Negocio (Backend):** Reglas de validación de disponibilidad de turnos, cálculo de la seña del 10% no reembolsable, integración con la API de Mercado Pago y control de permisos por roles.
+  * **Capa de Datos (Base de Datos):** Modelado y persistencia en MySQL/SQLite mediante ORM (SQLAlchemy) para las entidades `Usuarios`, `Mascotas`, `Servicios`, `Turnos` e `HistoriasClinicas`.
+* **Justificación:** Esta arquitectura independiente permite aislar la experiencia de usuario de la lógica crítica y facilita futuras expansiones (como una aplicación móvil).
